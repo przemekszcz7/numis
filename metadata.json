@@ -1,0 +1,6 @@
+{
+  "name": "NUMIS Biuro Rachunkowe",
+  "description": "Butikowe biuro rachunkowe w Tychach - rzetelna obsługa księgowa dla Twojej firmy.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
