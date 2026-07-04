@@ -388,6 +388,57 @@
       border-color: var(--gold);
     }
 
+    /* SCROLL TO TOP */
+    .scroll-to-top {
+      position: fixed;
+      bottom: 2.5rem;
+      right: 2.5rem;
+      width: 48px;
+      height: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: var(--navy);
+      color: var(--gold);
+      border: 1px solid rgba(250, 197, 81, 0.4);
+      border-radius: 50%;
+      font-size: 1.1rem;
+      cursor: pointer;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(15px);
+      transition: all var(--transition-normal);
+      z-index: 99;
+      box-shadow: 0 4px 20px rgba(5, 29, 55, 0.5);
+    }
+
+    .scroll-to-top.show {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+
+    .scroll-to-top:hover {
+      background-color: var(--gold);
+      color: var(--navy);
+      border-color: var(--gold);
+      transform: translateY(-5px);
+      box-shadow: 0 6px 24px rgba(250, 197, 81, 0.4);
+    }
+
+    .scroll-to-top:active {
+      transform: translateY(-2px);
+    }
+
+    @media (max-width: 768px) {
+      .scroll-to-top {
+        bottom: 1.5rem;
+        right: 1.5rem;
+        width: 44px;
+        height: 44px;
+      }
+    }
+
     /* HERO SECTION */
     section.hero-section {
       min-height: 100vh;
@@ -1982,6 +2033,9 @@
     </div>
   </footer>
 
+  <!-- Scroll to Top Button -->
+  <button id="scrollToTopBtn" class="scroll-to-top" aria-label="Przewiń do góry" title="Przewiń do góry">▲</button>
+
   <!-- VANILLA JAVASCRIPT -->
   <script>
     // Navbar Scroll Shadow Class toggle
@@ -1992,6 +2046,23 @@
       } else {
         header.classList.remove('scrolled');
       }
+    });
+
+    // Scroll-to-top button visibility and click handler
+    const scrollToTopBtn = document.getElementById('scrollToTopBtn');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 400) {
+        scrollToTopBtn.classList.add('show');
+      } else {
+        scrollToTopBtn.classList.remove('show');
+      }
+    });
+
+    scrollToTopBtn.addEventListener('click', () => {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
     });
 
     // Mobile menu toggle logic
