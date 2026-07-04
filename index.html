@@ -365,8 +365,27 @@
       color: var(--gold);
     }
 
-    .mobile-overlay .coin-ornament {
-      margin-bottom: 1rem;
+    .mobile-overlay-close {
+      position: absolute;
+      top: 2rem;
+      right: 2rem;
+      width: 44px;
+      height: 44px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--gold);
+      border: 1px solid rgba(250, 197, 81, 0.3);
+      border-radius: 50%;
+      font-size: 1.3rem;
+      transition: all var(--transition-normal);
+      z-index: 115;
+    }
+
+    .mobile-overlay-close:hover {
+      background-color: var(--gold-ghost);
+      transform: rotate(90deg);
+      border-color: var(--gold);
     }
 
     /* HERO SECTION */
@@ -400,7 +419,7 @@
     }
 
     .hero-content {
-      max-width: 62%;
+      max-width: 800px;
       display: flex;
       flex-direction: column;
       align-items: flex-start;
@@ -1551,7 +1570,7 @@
 
   <!-- Mobile Menu Overlay -->
   <div class="mobile-overlay" id="mobileOverlay">
-    <div class="coin-ornament">◆</div>
+    <button class="mobile-overlay-close" aria-label="Zamknij menu" onclick="toggleMenu()">✕</button>
     <a href="#o-nas" class="mobile-nav-link" onclick="toggleMenu()">O nas</a>
     <a href="#specjalizacja" class="mobile-nav-link" onclick="toggleMenu()">Usługi</a>
     <a href="#cennik" class="mobile-nav-link" onclick="toggleMenu()">Cennik</a>
@@ -1583,22 +1602,6 @@
             <a href="mailto:biuro.numis@gmail.com" class="btn btn-outline">Napisz do nas</a>
           </div>
           <span class="hero-teaser">Kompleksowa obsługa już od 400 zł brutto/miesiąc</span>
-        </div>
-
-        <!-- Right stacked feature badges (desktop only) -->
-        <div class="hero-badges-column fade-in-section">
-          <div class="hero-badge-card">
-            <span class="coin-ornament" style="width:24px; height:24px; font-size:0.6rem;">◆</span>
-            <span class="hero-badge-text">Pilnujemy terminów</span>
-          </div>
-          <div class="hero-badge-card">
-            <span class="coin-ornament" style="width:24px; height:24px; font-size:0.6rem;">◆</span>
-            <span class="hero-badge-text">Przejrzyste ceny</span>
-          </div>
-          <div class="hero-badge-card">
-            <span class="coin-ornament" style="width:24px; height:24px; font-size:0.6rem;">◆</span>
-            <span class="hero-badge-text">Osobista opieka</span>
-          </div>
         </div>
       </div>
     </section>
